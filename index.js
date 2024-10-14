@@ -1,6 +1,20 @@
 
 
 //EXERCICE POLICE D'ASSURANCE
+/* Police d’assurance.
+ Une compagnie d’assurance automobile propose 4 familles de tarifs du moins cher au plus
+ onéreux : A, B, C et D.
+ Le tarif dépend de la situation du conducteur:-Un conducteur de moins de 25 ans et titulaire du permis depuis moins de deux ans, se voit
+ attribuer le tarif D s’il n’a jamais été responsable d’accident. Sinon, la compagnie refuse de
+ l’assurer.- Un conducteur de moins de 25 ans et titulaire du permis depuis plus de deux ans, ou de
+ plus de 25 ans mais titulaire du permis depuis moins de deux ans a le droit au tarif C s’il n’a
+ jamais provoqué d’accident, au tarif D pour un accident, sinon il est refusé.-Un conducteur de plus de 25 ans titulaire du permis depuis plus de deux ans bénéficie du
+ tarif B s’il n’est à l’origine d’aucun accident et du tarif C pour un accident, du tarif D pour
+ deux accidents, et refusé sinon.
+ Par ailleurs, pour encourager la fidélité de ses clients, la compagnie propose un contrat au
+ tarif immédiatement inférieur s’il est assuré depuis plus d’un an.
+ Écrire un algorithme qui propose un tarif d’assurance selon les caractéristiques d’un client
+ potentiel */
 
 
 // Familles des tarifs, le A est le - cher
@@ -87,9 +101,12 @@ let ageConducteur = Window.prompt('Quel est votre âge');
 
 
 // EXERCICE PRIX D'UNE PHOTOCOPIE
+/* Prix d’une photocopie
+Écrire un algorithme qui affiche le prix de n photocopies sachant que le reprographe facture
+0,10 € les dix premières photocopies, 0,09 € les vingt suivantes et 0,08 € au-dela */
 
 
-function prixDesPhotocopies(n) {
+/* function prixDesPhotocopies(n) {
     let prix = 0;  
     if(n <= 10) {
         prix = n * 0.10;
@@ -102,4 +119,31 @@ function prixDesPhotocopies(n) {
 }
 
 console.log(`${prixDesPhotocopies(30)} €`);
+ */
 
+
+
+// EXERCICE CALCUL DES IMPOTS
+/* Calcul des impôts ˆ Ecrire un algorithme qui affiche si un contribuable d’un pays imaginaire
+est imposable ou non sachant que :– les hommes de plus de 18 ans paient l’impôt,– les
+femmes paient l’impôt si elles ont entre 18 et 35 ans,– les autres ne paient pas d’impôt. */
+
+
+let sexe = "";
+let age = "";
+
+function estImposable(sexe,age) {
+    if ((sexe==="homme" && age>=18) || (sexe==="femme" && age>=18 && age<=35)) {
+        return "Le contrubuable est imposable";
+    } else
+        return "Le contrubuable n'est pas imposable";
+    }
+
+
+    console.log(estImposable("femme",40));
+
+
+
+
+
+    
