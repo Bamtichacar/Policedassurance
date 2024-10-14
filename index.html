@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
+
+<form method="post" action="form.php">
+    <ul>
+        <li>
+            <label for="age">Quel est votre âge ? </label>
+            <input type="number" name="age" id="age" placeholder="50" pattern="[0-9]" required>
+            <label for="age"> ans</label>
+        </li> <br>
+        <li>
+            <label for="anneesPermis">Depuis quand avez-vous le permis de conduire ? </label>
+            <input type="number" name="anneesPermis" id="anneesPermis" placeholder="5" pattern="[0-9]" required>
+            <label for="anneesPermis"> ans</label>
+        </li> <br>
+        <li>
+            <label for="accidentResponsable">Combien avez-vous eu d'accidents responsables au cours des 5 dernières années ? </label>
+            <input type="number" name="accidentResponsable" id="accidentResponsable" placeholder="0" pattern="[0-9]" required>
+        </li> <br>
+        <li>
+            <label for="ancienneteAssurance"> Depuis combien d'années ? </label>
+            <input type="number" name="ancienneteAssurance" id="ancienneteAssurance" placeholder="3" pattern="[0-9]" required>
+            <label for="ancienneteAssurance">ans </label>
+        </li>
+    </ul>
+    <input type="submit" value="Envoyer">
+</form>
+
+
     
 </body>
 <script src="index.js"> </script>
