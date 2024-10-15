@@ -158,7 +158,7 @@ function estImposable(sexe,age) {
 */
 
 
-function etoilePointeEnBas(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+/* function etoilePointeEnBas(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
     for (let i = 0; i < n; i++) {
       let etoile = '';
       for (let j = 0; j < (n - i); j++) {  // Nombre d'étoiles à afficher dans chaque ligne, n-i reduira l'affichage de 1 (i augmente au for précédent donc parallelement reduiera j ici avec n-i)
@@ -185,8 +185,52 @@ function etoilePointeEnBas(n) {   // n corrspond au Nombre de lignes à créer q
   }
   
   etoilePointeEnBas(9);
+ */
 
 
+
+  // EXERCICE ECRIRE UN ALGO EN ETOILE PARTIE 2
+  /* Ecrire un algorithme qui affiche des étoiles (*) selon la disposition suivante :
+ *
+ * *
+ * * *
+ * * * *
+ * * * * *
+ * * * * * *
+ * * * * * * *
+ * * * * * * * *
+ * * * * * * * * *
+ * * * * * * * * * *   
+ */
+ 
+
+function etoilePointeEnHaut(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+    for (let i = 0; i < n; i++) {
+      let etoile = '';
+      for (let j = 0; j <= i; j++) {  // Nombre d'étoiles à afficher dans chaque ligne, on commence à zero
+        etoile += '*';
+      }
+      console.log(etoile);
+    }
+}
+  
+etoilePointeEnHaut(10);
+
+
+
+// AUTRE SOLUTION EN DECREMENTANT :
+
+function etoilePointeEnHaut(n) {   // n correspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+    for (let i = n; i > 0; i--) {
+      let etoile = '';
+      for (let j = n; j >=i; j--) {  // Nombre d'étoiles à afficher dans chaque ligne, c'est l'écart entre j et i 
+        etoile += '*';
+      }
+      console.log(etoile);
+    }
+}
+  
+etoilePointeEnHaut(10);
 
   
 
