@@ -115,10 +115,10 @@ let ageConducteur = Window.prompt('Quel est votre âge');
     } else if(n>30) {
         prix = 10*0.10 + 20*0.09 + (n-30)*0.08;
     }
-    return prix;
+    return prix.toFixed(2);   // tiFixed(2) Pour arrondir à 2ch après la virgule
 }
 
-console.log(`${prixDesPhotocopies(30)} €`);
+console.log(`${prixDesPhotocopies(25)} €`);
  */
 
 
@@ -129,7 +129,7 @@ est imposable ou non sachant que :– les hommes de plus de 18 ans paient l’im
 femmes paient l’impôt si elles ont entre 18 et 35 ans,– les autres ne paient pas d’impôt. */
 
 
-let sexe = "";
+/* let sexe = "";
 let age = "";
 
 function estImposable(sexe,age) {
@@ -141,9 +141,54 @@ function estImposable(sexe,age) {
 
 
     console.log(estImposable("femme",40));
+ */
+
+
+// EXERCICE ECRIRE UN ALGO EN ETOILE PARTIE 1
+/* Ecrire un algorithme qui affiche des étoiles (*) selon la disposition suivante :
+ * * * * * * * * *
+ * * * * * * * *
+ * * * * * * *
+ * * * * * *
+ * * * * *
+ * * * *
+ * * *
+ * *
+ * 
+*/
+
+
+function etoilePointeEnBas(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+    for (let i = 0; i < n; i++) {
+      let etoile = '';
+      for (let j = 0; j < (n - i); j++) {  // Nombre d'étoiles à afficher dans chaque ligne, n-i reduira l'affichage de 1 (i augmente au for précédent donc parallelement reduiera j ici avec n-i)
+        etoile += '*';
+      }
+      console.log(etoile);
+    }
+  }
+  
+  etoilePointeEnBas(9);
 
 
 
+// AUTRE SOLUTION EN DECREMENTANT :
+
+  function etoilePointeEnBas(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+    for (let i = n; i > 0; i--) {
+      let etoile = '';
+      for (let j = i; j > 0; j--) {  // Nombre d'étoiles à afficher dans chaque ligne, j prendra la valeur du i de la 1ere boucle for 
+        etoile += '*';
+      }
+      console.log(etoile);
+    }
+  }
+  
+  etoilePointeEnBas(9);
 
 
-    
+
+  
+
+
+
