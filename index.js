@@ -204,7 +204,7 @@ function estImposable(sexe,age) {
  */
  
 
-function etoilePointeEnHaut(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+/* function etoilePointeEnHaut(n) {   // n corrspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
     for (let i = 0; i < n; i++) {
       let etoile = '';
       for (let j = 0; j <= i; j++) {  // Nombre d'étoiles à afficher dans chaque ligne, on commence à zero
@@ -215,12 +215,12 @@ function etoilePointeEnHaut(n) {   // n corrspond au Nombre de lignes à créer 
 }
   
 etoilePointeEnHaut(10);
-
+ */
 
 
 // AUTRE SOLUTION EN DECREMENTANT :
 
-function etoilePointeEnHaut(n) {   // n correspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
+/* function etoilePointeEnHaut(n) {   // n correspond au Nombre de lignes à créer qui correspondront ici au nb d'étoiles
     for (let i = n; i > 0; i--) {
       let etoile = '';
       for (let j = n; j >=i; j--) {  // Nombre d'étoiles à afficher dans chaque ligne, c'est l'écart entre j et i 
@@ -231,8 +231,122 @@ function etoilePointeEnHaut(n) {   // n correspond au Nombre de lignes à créer
 }
   
 etoilePointeEnHaut(10);
-
+ */
   
+
+
+
+
+
+/* EXERCICE RECHERCHE DES OCCURENCES
+Recherche de toutes les occurrences.
+Définir une fonction qui retourne la liste des rangs de toutes les occurrences d’un élément x
+dans une liste t. */
+
+// formules de base :
+/* function logArrayElements(element, index, array) {
+    console.log("a[" + index + "] = " + element);
+  }
+  [2, 5, , 9].forEach(logArrayElements);
+  // logs:
+  // a[0] = 2
+  // a[1] = 5
+  // a[3] = 9
+ */  
+
+
+  /* Trouver toutes les occurences d'un élément
+  Dans l'exemple qui suit, on utilise indexOf() afin de trouver tous les indices d'un élément 
+  dans un tableau. On peut utiliser la méthode push afin d'ajouter ces indices dans un autre tableau.
+  
+  js
+  Copy to Clipboard */
+/*   var indices = [];
+  var tableau = ["a", "b", "a", "c", "a", "d"];
+  var élément = "a";
+  var idx = tableau.indexOf(élément);
+  while (idx != -1) {
+    indices.push(idx);
+    idx = tableau.indexOf(élément, idx + 1);
+  }
+  console.log(indices);
+ */  // [0, 2, 4]
+
+
+
+
+// Réponse exercice :
+
+
+//NON PAS BON
+/* let liste_t =["tati","tata","toto",32,true,"tatie","tatie"];
+
+
+function logArrayElements(element, index, liste_t) {
+    console.log("liste_t[" + index + "] = " + element);
+}
+
+//liste_t.forEach(logArrayElements);
+  
+
+["tatie"].forEach(logArrayElements);
+
+
+
+const array1 = ['a', 'b', 'c'];
+const iterator = array1.values();
+
+for (const value of iterator) {
+  console.log(value);
+}
+
+// Expected output: "a"
+// Expected output: "b"
+// Expected output: "b"
+ */
+
+
+
+
+// REPONSE OK
+
+let t = ["a", "b", "a", "c", "a", "d", "x", 45, "x"];
+
+function listeDesRangsDeToutesLesOccurences(x) {
+    let indices = [];
+    let index = t.indexOf(x);
+    while (index != -1) {
+      indices.push(index);
+      index = t.indexOf(x, index + 1);
+    }
+    console.log(indices);
+}
+listeDesRangsDeToutesLesOccurences("a");
+
+
+
+//OU 
+
+let tBis = ["a", "b", "a", "c", "a", "d", "x", 45, "x"];
+
+let elementRecherche = "a";
+
+
+function listeDesRangsDeToutesLesOccurencesBis(x) {
+    let indices = [];
+    let index = tBis.indexOf(x);
+    while (index != -1) {
+      indices.push(index);
+      index = tBis.indexOf(x, index + 1);
+    }
+    console.log(indices);
+}
+listeDesRangsDeToutesLesOccurencesBis(elementRecherche);
+
+
+
+
+
 
 
 
