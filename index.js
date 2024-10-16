@@ -310,7 +310,7 @@ for (const value of iterator) {
 
 // REPONSE OK
 
-let t = ["a", "b", "a", "c", "a", "d", "x", 45, "x"];
+/* let t = ["a", "b", "a", "c", "a", "d", "x", 45, "x"];
 
 function listeDesRangsDeToutesLesOccurences(x) {
     let indices = [];
@@ -342,6 +342,82 @@ function listeDesRangsDeToutesLesOccurencesBis(x) {
     console.log(indices);
 }
 listeDesRangsDeToutesLesOccurencesBis(elementRecherche);
+ */
+
+
+
+
+//EXERCICE TRI A BULLES
+
+/* 
+Tri à bulles.
+Dans le tri à bulles, on parcourt la liste en commençant par la fin, en effectuant un échange
+à chaque fois que l’on trouve deux éléments successifs qui ne sont pas dans le bon ordre.
+Définir une fonction qui trie une liste selon la méthode du tri à bulles
+*/
+
+
+// Pour parcourir la liste en commençant par le début :
+
+
+let tableau = [1,2,7,6,5,4];
+
+console.log(tableau);
+
+function triABulles() {
+    for (let i = 0; i < tableau.length - 1; i++) {
+        for (let j = 0; j < tableau.length - 1 - i; j++) {
+            if (tableau[j] > tableau[j + 1]) {
+                // Échange des éléments
+                let temp = tableau[j];
+                tableau[j] = tableau[j + 1];
+                tableau[j + 1] = temp;
+            }
+        }
+    }
+    console.log(tableau);
+}
+    
+triABulles();
+
+
+
+// Pour parcourir la liste en commençant par la fin :
+
+let tableauBis = [1,2,7,6,5,4];
+
+console.log(tableauBis);
+
+function triABullesBis() {
+    for (let i= tableauBis.length -1; i>= 0; i--) {
+        for (let j = tableauBis.length -1; i>0;i--) {
+            if (tableauBis[j] < tableauBis[j-1]) {
+                // Échange des éléments
+                let temp = tableauBis[j-1];
+                tableauBis[j-1] = tableauBis[j];
+                tableauBis[j] = temp;
+            }
+        }
+    }
+    console.log(tableauBis);
+}
+    
+triABullesBis();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
