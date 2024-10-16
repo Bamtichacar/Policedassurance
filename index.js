@@ -360,7 +360,7 @@ Définir une fonction qui trie une liste selon la méthode du tri à bulles
 // Pour parcourir la liste en commençant par le début :
 
 
-let tableau = [1,2,7,6,5,4];
+/* let tableau = [1,2,7,6,5,4];
 
 console.log(tableau);
 
@@ -404,20 +404,69 @@ function triABullesBis() {
     
 triABullesBis();
 
+ */
 
 
 
 
+//EXERCICE PALINDROME
+
+/* Palindrome.
+Écrire un algorithme qui vérifie si le mot entré par l’utilisateur est un palindrome. Afficher
+“true” si c’est le cas, “false” dans le cas contraire */
+
+
+/* PAS BON return true n'est pas bien placé car à la 1ere valeur ok trouvée 
+il retournera true car il est dans la boucle for
+Le code retourne true dès qu’il trouve une correspondance, ce qui n’est pas correct. 
+Il devrait continuer à vérifier tous les caractères. Le retour true devrait se faire après la boucle, 
+seulement si aucune différence n’a été trouvée.
+Dans cet algorithme, on veut vérifier chaque paire de caractères (du début et de la fin) pour voir 
+s’ils sont identiques. Si on trouve une paire qui ne correspond pas, on retournes false immédiatement. 
+Si toutes les paires correspondent, alors on retourne true après avoir vérifié toutes les paires.
+ */
+/* let mot = "abcdcba";
+
+function estUnPalindrome(mot) {
+    for (let i = 0; i < mot.length/2; i++) {
+        if(mot.charAt(i) === mot.charAt(mot.length-1 -i)) {
+            return true;
+        } else
+            return false
+    }
+    
+}
+
+console.log(estUnPalindrome(mot));
+ */
+
+// Code Ok, pour pouvoir sortir return true de la boucle mais laisser return false à la 1ere iteration fausse,
+// il faut passse par !== au lieu de ===
+
+
+let mot = "abcdcba";
+
+function estUnPalindrome(mot) {
+    for (let i = 0; i < mot.length/2; i++) {
+        if(mot.charAt(i)!== mot.charAt(mot.length-1 -i)) {
+            return false;    // Si une paire ne correspond pas, retourne false
+        } 
+    }
+    return true;      // Si toutes les paires correspondent, retourne true
+    
+}
+
+console.log(estUnPalindrome(mot));
 
 
 
+/* NE PAS S EN SERVIR
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
 
-
-
-
-
-
-
+pui si mot 1=mot2 alors true etc
+ */
 
 
 
