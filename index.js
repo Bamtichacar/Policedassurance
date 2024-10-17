@@ -444,7 +444,7 @@ console.log(estUnPalindrome(mot));
 // il faut passse par !== au lieu de ===
 
 
-let mot = "abcdcba";
+/* let mot = "abcdcba";
 
 function estUnPalindrome(mot) {
     for (let i = 0; i < mot.length/2; i++) {
@@ -457,16 +457,121 @@ function estUnPalindrome(mot) {
 }
 
 console.log(estUnPalindrome(mot));
-
+ */
 
 
 /* NE PAS S EN SERVIR
-function reverseString(str) {
-    return str.split("").reverse().join("");
+function reverseString(mot) {
+    return mot.split("").reverse().join("");
 }
 
 pui si mot 1=mot2 alors true etc
  */
+
+
+
+
+
+
+//EXERCICE TOURS DE HANOÏ
+// Pris le corrigé
+
+
+/* Tours de Hanoï.
+ Les « tours de Hanoï » est un jeu qui consiste à déplacer n disques de diamètres différents
+ d’une tour de « départ » à une tour d'arrivée » en passant par une tour intermédiaire » et
+ ceci en un minimum de coups, tout en respectant les règles suivantes :– on ne peut déplacer qu’un 
+ disque à la fois,– on ne peut placer un disque que sur un autre disque plus grand que lui ou sur une 
+ tour vide.
+ Dans l'état initial, les n disques sont placés sur la tour « départ ». Dans l’état final, tous les
+ disques se retrouvent placés dans le même ordre sur la tour « arrivée » */
+
+
+//Fonction récursive pour résoudre les Tours de Hanoï
+/* L'ordre des tours change dans les appels récursifs pour refléter les nouvelles positions des 
+disques au cours des mouvements. Chaque appel récursif modifie le rôle des tours de manière à 
+toujours respecter les règles du jeu */
+
+
+function hanoi(n, source, destination, auxiliary) {
+    // Cas de base : si un seul disque, le déplacer directement
+    if (n === 1) {
+        console.log(`Déplacer le disque 1 de ${source} à ${destination}`);
+        return;
+    }
+    
+    // Déplacer n-1 disques de la tour source à la tour auxiliaire
+    hanoi(n - 1, source, auxiliary, destination);
+    
+    // Déplacer le disque restant de la tour source à la tour destination
+    console.log(`Déplacer le disque ${n} de ${source} à ${destination}`);
+    
+    // Déplacer les n-1 disques de la tour auxiliaire à la tour destination
+    hanoi(n - 1, auxiliary, destination, source);
+}
+
+// Exécution de la fonction avec un exemple de 3 disques
+const nombreDeDisques = 4;
+hanoi(nombreDeDisques, 'Départ', 'Arrivée', 'Intermédiaire');
+
+
+
+
+
+     // OU avec boucle for :
+
+// Fonction pour trouver la tour vers laquelle déplacer le disque en suivant les règles du jeu
+function deplacerDisque(tours, source, destination) {
+    if (tours[destination].length === 0 || (tours[source].length > 0 && tours[source][tours[source].length - 1] < tours[destination][tours[destination].length - 1])) {
+        let disque = tours[source].pop();
+        tours[destination].push(disque);
+        console.log(`Déplacer le disque ${disque} de ${source} à ${destination}`);
+    } else {
+        let disque = tours[destination].pop();
+        tours[source].push(disque);
+        console.log(`Déplacer le disque ${disque} de ${destination} à ${source}`);
+    }
+}
+
+// Fonction itérative pour résoudre les Tours de Hanoï avec des boucles for
+function hanoiIteratif(n) {
+    let tours = {
+        'Départ': [],
+        'Arrivée': [],
+        'Intermédiaire': []
+    };
+
+    // Placer tous les disques dans la tour "Départ"
+    for (let i = n; i >= 1; i--) {
+        tours['Départ'].push(i);
+    }
+
+    let totalMouvements = Math.pow(2, n) - 1; // Nombre total de mouvements nécessaires
+    let source = 'Départ', destination = 'Arrivée', auxiliaire = 'Intermédiaire';
+
+    // Inverser destination et auxiliaire si le nombre de disques est pair
+    if (n % 2 === 0) {
+        [destination, auxiliaire] = [auxiliaire, destination];
+    }
+
+    // Exécution de tous les mouvements
+    for (let i = 1; i <= totalMouvements; i++) {
+        if (i % 3 === 1) {
+            deplacerDisque(tours, 'Départ', destination);
+        } else if (i % 3 === 2) {
+            deplacerDisque(tours, 'Départ', auxiliaire);
+        } else if (i % 3 === 0) {
+            deplacerDisque(tours, auxiliaire, destination);
+        }
+    }
+}
+
+// Exécution de l'algorithme avec un exemple de 3 disques
+const nombreDeDisquesBis = 3;
+hanoiIteratif(nombreDeDisquesBis);
+
+
+
 
 
 
