@@ -493,7 +493,7 @@ disques au cours des mouvements. Chaque appel récursif modifie le rôle des tou
 toujours respecter les règles du jeu */
 
 
-function hanoi(n, source, destination, auxiliary) {
+/* function hanoi(n, source, destination, auxiliary) {
     // Cas de base : si un seul disque, le déplacer directement
     if (n === 1) {
         console.log(`Déplacer le disque 1 de ${source} à ${destination}`);
@@ -570,12 +570,58 @@ function hanoiIteratif(n) {
 const nombreDeDisquesBis = 3;
 hanoiIteratif(nombreDeDisquesBis);
 
+ */
+
+
+//EXERCICE MOTIF DIESE ETOILE
+/* Ecrire un algorithme qui affiche le motif suivant :
+ #*#*#*#*#*
+ *#*#*#*#*#
+ #*#*#*#*#*
+ *#*#*#*#*#
+ #*#*#*#*#*
+ *#*#*#*#*#
+ */
+
+// MA REPONSE QUI FONCTIONNE
+function motifDieseEtoile(n) {
+    for (let i = 0; i < n; i++) {  // Nb de lignes à afficher
+        let symbole = "";   
+        for (let j = 0; j < n-1 ; j++) {  // Nb de symboles à afficher dans chaque ligne
+            if (i & 1) {
+                symbole += "#*";
+            } else {
+                symbole += "*#";
+            }
+        }
+        console.log(symbole);
+    }
+}
+
+motifDieseEtoile(6);
 
 
 
+// REPONSE DU CORRIGE
+function motifDieseEtoileBis(n) {
+    for (let i = 0; i < n; i++) {  // Nb de lignes à afficher
+        let symbole = "";
+        for (let j = 0; j < n; j++) {  // Nb de symboles à afficher dans chaque ligne
+            if (i % 2 === 0) {
+                symbole += (j % 2 === 0) ? "#" : "*";
+            } else {
+                symbole += (j % 2 === 0) ? "*" : "#";
+            }
+        }
+        console.log(symbole);
+    }
+}
 
+motifDieseEtoileBis(6);
+ 
+        
 
-
+  
 
 
 
