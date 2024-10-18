@@ -141,7 +141,7 @@ function estImposable(sexe,age) {
 
 
     console.log(estImposable("femme",40));
- */
+ */ 
 
 
 // EXERCICE ECRIRE UN ALGO EN ETOILE PARTIE 1
@@ -584,7 +584,7 @@ hanoiIteratif(nombreDeDisquesBis);
  */
 
 // MA REPONSE QUI FONCTIONNE
-function motifDieseEtoile(n) {
+/* function motifDieseEtoile(n) {
     for (let i = 0; i < n; i++) {  // Nb de lignes à afficher
         let symbole = "";   
         for (let j = 0; j < n-1 ; j++) {  // Nb de symboles à afficher dans chaque ligne
@@ -618,11 +618,61 @@ function motifDieseEtoileBis(n) {
 }
 
 motifDieseEtoileBis(6);
- 
+ */ 
         
 
   
+//EXERCICE DECALLER RANG ALPHABET
+
+/* Écrire un algorithme qui décale de n rang de l’alphabet les lettres d’un mot en fonction de
+ l’entrée utilisateur. exemple n= 3.
+ du coup banane deviendra : edqdqh
+ */
+
+/*  function decaleDenRang () {
 
 
 
+
+
+
+ }
+ */
+
+
+
+
+
+// EXERCICE CALCUL DE L'IMPOT SUITE
+    /* En vous référent à l’exercice calcul de l’impôt, vous allez ajouter le calcul du taux
+    d’imposition en appliquant ce barème:
+    ○ Pourles hommes, le taux d’imposition est de 10% de leur âge.
+    ○ Pourles femmes de moins de 25 ans, le taux est de 8% de leur âge.
+    ○ Pourles femmes de 25 ans et plus, le taux est de 5% de leur âge.
+    et bien sûr on affiche le taux d’imposition */
+
+
+let sexe = "";
+let age = "";
+
+function estImposable(sexe,age) {
+    if ((sexe==="homme" && age>=18) || (sexe==="femme" && age>=18 && age<=35)) {
+        console.log("Le contrubuable est imposable");
+        if (sexe==="homme") {
+            return `le taux d'imposition des de ${age*10/100} %`
+        } else if (sexe==="femme" && age<25) {
+            return `le taux d'imposition des de ${age*8/100} %`
+        } else if (sexe==="femme" && age>=25) {
+            return `le taux d'imposition des de ${age*5/100} %`
+        }
+    } else
+        return "Le contrubuable n'est pas imposable \n il n'y au donc aucun taux d'imposition";
+    }
+
+
+    console.log(estImposable("homme",15));
+    
+    
+    
+    
 
