@@ -659,14 +659,14 @@ function estImposable(sexe,age) {
     if ((sexe==="homme" && age>=18) || (sexe==="femme" && age>=18 && age<=35)) {
         console.log("Le contrubuable est imposable");
         if (sexe==="homme") {
-            return `le taux d'imposition des de ${age*10/100} %`
+            return `Le taux d'imposition des de ${age*10/100} %`
         } else if (sexe==="femme" && age<25) {
-            return `le taux d'imposition des de ${age*8/100} %`
+            return `Le taux d'imposition des de ${age*8/100} %`
         } else if (sexe==="femme" && age>=25) {
-            return `le taux d'imposition des de ${age*5/100} %`
+            return `Le taux d'imposition des de ${age*5/100} %`
         }
     } else
-        return "Le contrubuable n'est pas imposable \n il n'y au donc aucun taux d'imposition";
+        return "Le contrubuable n'est pas imposable \n Il n'y a donc aucun taux d'imposition";
     }
 
 
